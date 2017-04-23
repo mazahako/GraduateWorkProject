@@ -18,7 +18,20 @@
 			</div>
 		</md-toolbar>
 		<md-content layout-padding>
-			<p>Кнопки навигации и все такое...</p>
+			<md-list>
+				<md-list-item ng-click="">
+					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_list_48px.svg"></md-icon>
+					<p>Дисциплины</p>
+				</md-list-item>
+				<md-list-item ng-click="">
+					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_account_circle_48px.svg"></md-icon>
+					<p>Профиль</p>
+				</md-list-item>
+				<md-list-item ng-click="">
+					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_settings_48px.svg"></md-icon>
+					<p>Настройки</p>
+				</md-list-item>
+			</md-list>
 		</md-content>
 	</md-sidenav>
 
@@ -40,7 +53,7 @@
 
 		<md-content flex layout-padding layout-align="center" layout="row">
 
-			<md-card md-whiteframe="7"  flex-gt-sm="90" flex-gt-md="80" layout-fill>
+			<md-card md-whiteframe="7" flex-gt-sm="90" flex-gt-md="80" layout-fill>
 				<md-card-content>
 					<md-list ng-controller="disciplineListCtrl as discCtrl">
 						<md-list-item class="md-3-line" ng-repeat="item in discCtrl.disciplines | courseFilter:[1, 2, 3, 4, 5]" ng-click="discCtrl.showAdditionInformation($event, item)">
