@@ -1,0 +1,27 @@
+{
+  "name": "graduateworkproject",
+  "version": "1.0.0",
+  "description": "front-end for graduate work project",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.2",
+    "angular-aria": "^1.6.2",
+    "angular-material": "^1.1.4",
+    "material-design-icons": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazahako/GraduateWorkProject.git"
+  },
+  "author": "Konstantin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazahako/GraduateWorkProject/issues"
+  },
+  "homepage": "https://github.com/mazahako/GraduateWorkProject#readme"
+}
