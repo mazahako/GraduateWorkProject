@@ -39,8 +39,9 @@
 		</md-toolbar>
 
 		<md-content flex layout-padding layout-align="center" layout="row">
-			<md-card-content layout-fill flex-gt-sm="90" flex-gt-md="80">
-				<md-card md-whiteframe="7">
+
+			<md-card md-whiteframe="7"  flex-gt-sm="90" flex-gt-md="80" layout-fill>
+				<md-card-content>
 					<md-list ng-controller="disciplineListCtrl as discCtrl">
 						<md-list-item class="md-3-line" ng-repeat="item in discCtrl.disciplines | courseFilter:[1, 2, 3, 4, 5]" ng-click="discCtrl.showAdditionInformation($event, item)">
 							<div class="md-list-item-text" layout="column">
@@ -49,8 +50,9 @@
 							</div>
 						</md-list-item>
 					</md-list>
-				</md-card>
-			</md-card-content>
+				</md-card-content>
+			</md-card>
+
 		</md-content>
 	</div>
 </body>
