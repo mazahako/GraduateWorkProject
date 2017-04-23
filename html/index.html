@@ -7,28 +7,12 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
 
-<body ng-app="MyApp" ng-controller="appCtrl as app">
-
-	<md-toolbar>
-		<div class="md-toolbar-tools">
-			<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()">
-				<md-icon md-svg-icon="../node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"></md-icon>
-			</md-button>
-			<h2>Перечень дисциплин</h2>
-			<md-button class="md-icon-button">
-				<md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
-			</md-button>
-			<md-button class="md-icon-button">
-				<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-			</md-button>
-		</div>
-	</md-toolbar>
-
-	<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+<body ng-app="MyApp" ng-controller="appCtrl as app" layout="row" layout-fill>
+	<md-sidenav class="md-sidenav-left" layout="column" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
 		<md-toolbar class="md-tall">
 			<div class="md-toolbar-tools">
 				<h1 class="md-toolbar-tools">Навигация</h1>
-				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()">
+				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md>
 					<md-icon md-svg-icon="../node_modules/material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg"></md-icon>
 				</md-button>
 			</div>
@@ -38,9 +22,24 @@
 		</md-content>
 	</md-sidenav>
 
-	<content flex layout="row">
-		<md-card flex class="md-padding" md-whiteframe="7">
-			<md-list ng-controller="disciplineListCtrl as discCtrl" flex>
+	<div layout="column" class="relative" layout-fill role="main">
+		<md-toolbar layout="row">
+			<div class="md-toolbar-tools">
+				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md>
+					<md-icon md-svg-icon="../node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"></md-icon>
+				</md-button>
+				<h2>Перечень дисциплин</h2>
+				<md-button class="md-icon-button">
+					<md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+				</md-button>
+				<md-button class="md-icon-button">
+					<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+
+		<md-content flex layout-padding>
+			<md-list ng-controller="disciplineListCtrl as discCtrl">
 				<md-list-item class="md-3-line" ng-repeat="item in discCtrl.disciplines | courseFilter:[1, 2, 3, 4, 5]" ng-click="discCtrl.showAdditionInformation($event, item)">
 					<div class="md-list-item-text" layout="column">
 						<h3>{{ item.name }}</h3>
@@ -48,24 +47,8 @@
 					</div>
 				</md-list-item>
 			</md-list>
-		</md-card>
-
-		<md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" flex md-whiteframe="5">
-			<md-content layout-padding>
-
-				<form>
-					<md-input-container>
-						<label for="testInput">Test input</label>
-						<input type="text" id="testInput">
-					</md-input-container>
-				</form>
-				<md-button class="md-primary">
-					Close Sidenav Right
-				</md-button>
-			</md-content>
-			<p>еще одна менюха с параметрами выборки и сортировки</p>
-		</md-sidenav>
-	</content>
+		</md-content>
+	</div>
 </body>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
