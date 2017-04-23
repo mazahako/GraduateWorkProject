@@ -1,35 +1,33 @@
 <md-dialog aria-label="List dialog">
-    <md-dialog-content>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>{{ name }}</h2>
-            </div>
-        </md-toolbar>
-        <md-tabs md-dynamic-height
-                 md-border-bottom>
-            <md-tab label="Студент будет знать">
-                <md-content class="md-padding">
-                    <md-list>
-                        <md-list-item ng-repeat="item in willKnow">
-                            <p>- {{item}}</p>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-            </md-tab>
-            <md-tab label="Студент будет уметь">
-                <md-content class="md-padding">
-                    <md-list>
-                        <md-list-item ng-repeat="item in willBeAble">
-                            <p>- {{item}}</p>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-            </md-tab>
-        </md-tabs>
-    </md-dialog-content>
-    <md-dialog-actions>
-        <md-button ng-click="closeDialog()"
-                   class="md-primary"> Закрыть
-        </md-button>
-    </md-dialog-actions>
+	<md-dialog-content>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>{{ name }}</h2>
+			</div>
+		</md-toolbar>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Студент будет знать">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item ng-repeat="item in willKnow">
+							<p>- {{item}}</p>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+			<md-tab label="Студент будет уметь">
+				<md-content class="md-padding">
+					<md-list>
+						<md-list-item ng-repeat="item in willBeAble">
+							<p>- {{item}}</p>
+						</md-list-item>
+					</md-list>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-dialog-content>
+	<md-dialog-actions>
+		<md-button ng-click="closeDialog()" class="md-primary"> Закрыть
+		</md-button>
+	</md-dialog-actions>
 </md-dialog>

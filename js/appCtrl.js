@@ -6,6 +6,5 @@ function appCtrl($mdSidenav){
         else{
             $mdSidenav("left").open();
         }
-        console.log("lol");
     }
 }
