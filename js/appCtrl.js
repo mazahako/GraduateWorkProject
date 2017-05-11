@@ -9,11 +9,6 @@ function appCtrl($mdSidenav, $mdMenu){
         }
     }
 
-    this.openMenu = function($mdOpenMenu, ev) {
-        $mdOpenMenu(ev);
-        return;
-    }
-
     this.goToLessonsList = function(){
         return;
     }
@@ -23,5 +18,7 @@ function appCtrl($mdSidenav, $mdMenu){
     this.goToSettings = function(){
         return;
     }
-
+    this.goToInfo = function(){
+        return;
+    }
 }

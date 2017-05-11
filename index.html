@@ -20,15 +20,19 @@
 		</md-toolbar>
 		<md-content>
 			<md-list>
-				<md-list-item ng-click="app.goToLessonsList()">
+                <md-list-item href="#/info">
+					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_info_48px.svg"></md-icon>
+					<p>О специальности</p>
+				</md-list-item>
+				<md-list-item href="#/list">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_list_48px.svg"></md-icon>
 					<p>Дисциплины</p>
 				</md-list-item>
-				<md-list-item ng-click="app.goToProfile()">
+				<md-list-item href="#/profile">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_account_circle_48px.svg"></md-icon>
 					<p>Профиль</p>
 				</md-list-item>
-				<md-list-item ng-click="app.goToSettings()">
+				<md-list-item href="#/settings">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_settings_48px.svg"></md-icon>
 					<p>Настройки</p>
 				</md-list-item>
@@ -36,49 +40,8 @@
 		</md-content>
 	</md-sidenav>
 
-	<div layout="column" class="relative" layout-fill role="main">
-		<md-toolbar md-whiteframe="2" layout="row">
-			<div class="md-toolbar-tools">
-				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md>
-					<md-icon md-svg-icon="../node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"></md-icon>
-				</md-button>
-				<h2 flex>Перечень дисциплин</h2>
-				<md-button class="md-icon-button" ng-click="app.toogleRightSidenav()" aria-label="More">
-					<md-icon md-svg-icon="../node_modules/material-design-icons/navigation/svg/production/ic_more_vert_48px.svg"></md-icon>
-				</md-button>
-			</div>
-		</md-toolbar>
-
-		<md-content flex ng-controller="disciplineListCtrl as discCtrl">
-			<md-card>
-				<md-card-header>
-					<md-menu>
-						<md-button class="md-raised md-primary" ng-click="app.openMenu($mdOpenMenu, $event)">
-							<span>Показать..</span>
-							<md-icon md-menu-origin md-svg-icon="node_modules\material-design-icons\navigation\svg\production\ic_arrow_drop_down_48px.svg"></md-icon>
-						</md-button>
-						<md-menu-content width="3" layout="column">
-							<md-menu-item ng-repeat="i in [1, 2, 3, 4, 5]">
-								<md-switch ng-model="discCtrl.course[i-1]" md-prevent-menu-close
-                                            ng-true-value="{{i}}" ng-false-value="6" class="md-primary">
-									<span>{{ i }} курс ({{(discCtrl.disciplines|courseFilter:[i.toString()]).length}} шт.)</span>
-								</md-switch>
-							</md-menu-item>
-						</md-menu-content>
-					</md-menu>
-				</md-card-header>
-				<md-card-content>
-					<md-list>
-						<md-list-item class="md-3-line" ng-repeat="item in discCtrl.disciplines | courseFilter:discCtrl.course" ng-click="discCtrl.showAdditionInformation($event, item)">
-							<div class="md-list-item-text">
-								<h3>{{ item.name }}</h3>
-								<p md-truncate>Изучается на {{ item.course.join(", ") }} курсе в течении {{ item.hours }} часов</p>
-							</div>
-						</md-list-item>
-					</md-list>
-				</md-card-content>
-			</md-card>
-		</md-content>
+	<div layout="column" class="relative" layout-fill role="main" ui-view >
+		<!-- here is template content -->
 	</div>
 </body>
 
@@ -86,6 +49,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 

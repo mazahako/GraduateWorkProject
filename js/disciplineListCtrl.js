@@ -1500,6 +1500,11 @@ function disciplineListCtrl($mdDialog) {
 
 	this.course = [1,2,3,4,5];
 
+    this.openMenu = function($mdOpenMenu, ev) {
+        $mdOpenMenu(ev);
+        return;
+    }
+
 	this.showAdditionInformation = function($event, item) {
 		var parentEl = angular.element(document.body);
 		$mdDialog.show({
