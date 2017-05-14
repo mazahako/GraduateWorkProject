@@ -2,14 +2,14 @@
 	<md-dialog-content>
 		<md-toolbar>
 			<div class="md-toolbar-tools">
-				<h2>{{ name }}</h2>
+				<h2>{{ DialogCtrl.name }}</h2>
 			</div>
 		</md-toolbar>
 		<md-tabs md-dynamic-height md-border-bottom>
 			<md-tab label="Студент будет знать">
 				<md-content class="md-padding">
 					<md-list>
-						<md-list-item ng-repeat="item in willKnow">
+						<md-list-item ng-repeat="item in DialogCtrl.willKnow">
 							<p>- {{item}}</p>
 						</md-list-item>
 					</md-list>
@@ -18,7 +18,7 @@
 			<md-tab label="Студент будет уметь">
 				<md-content class="md-padding">
 					<md-list>
-						<md-list-item ng-repeat="item in willBeAble">
+						<md-list-item ng-repeat="item in DialogCtrl.willBeAble">
 							<p>- {{item}}</p>
 						</md-list-item>
 					</md-list>
@@ -27,7 +27,7 @@
 		</md-tabs>
 	</md-dialog-content>
 	<md-dialog-actions>
-		<md-button ng-click="closeDialog()" class="md-primary"> Закрыть
+		<md-button ng-click="DialogCtrl.closeDialog()" class="md-primary"> Закрыть
 		</md-button>
 	</md-dialog-actions>
 </md-dialog>

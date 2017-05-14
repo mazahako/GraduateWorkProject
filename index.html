@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp" ng-controller="appCtrl as app" >
 
 <head>
 	<meta charset="UTF-8">
-	<title>Just</title>
+	<title>K504</title>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-	<link rel="stylesheet" href="../css/md-button-group.css">
 </head>
 
-<body ng-app="MyApp" ng-controller="appCtrl as app" layout="row" layout-fill>
+<body layout="row" layout-fill>
 	<md-sidenav class="md-sidenav-left" layout="column" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
 		<md-toolbar class="md-tall md-hue-2" layout="row">
 			<div class="md-toolbar-tools">
@@ -20,19 +19,19 @@
 		</md-toolbar>
 		<md-content>
 			<md-list>
-                <md-list-item href="#/info">
+                <md-list-item ui-sref="info">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_info_48px.svg"></md-icon>
 					<p>О специальности</p>
 				</md-list-item>
-				<md-list-item href="#/list">
+				<md-list-item ui-sref="list">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_list_48px.svg"></md-icon>
 					<p>Дисциплины</p>
 				</md-list-item>
-				<md-list-item href="#/profile">
+				<md-list-item ui-sref="profile">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_account_circle_48px.svg"></md-icon>
 					<p>Профиль</p>
 				</md-list-item>
-				<md-list-item href="#/settings">
+				<md-list-item ui-sref="settings">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_settings_48px.svg"></md-icon>
 					<p>Настройки</p>
 				</md-list-item>

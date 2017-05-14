@@ -1,24 +1,12 @@
-function appCtrl($mdSidenav, $mdMenu){
+function appCtrl($mdSidenav){
 
     this.toogleLeftSidenav = function (){
+        self.lol = $mdSidenav("left").isOpen();
         if($mdSidenav("left").isOpen()){
             $mdSidenav("left").close();
         }
         else{
             $mdSidenav("left").open();
         }
-    }
-
-    this.goToLessonsList = function(){
-        return;
-    }
-    this.goToProfile = function(){
-        return;
-    }
-    this.goToSettings = function(){
-        return;
-    }
-    this.goToInfo = function(){
-        return;
     }
 }
