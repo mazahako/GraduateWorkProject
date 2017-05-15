@@ -16,6 +16,10 @@
             url: "/info",
             templateUrl: "html/info.tmpl.html",
         })
+        .state('map', {
+            url: "/map",
+            templateUrl: "html/map.tmpl.html",
+        })
         .state('settings', {
             url: "/settings",
             templateUrl: "html/settings.tmpl.html",
