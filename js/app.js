@@ -1,6 +1,6 @@
 (function(){
     var app = angular.module("MyApp", ['ngMaterial', "ui.router"]);
-    app.filter("courseFilter", courseFilter);
+    app.filter("disciplineFilter", disciplineFilter);
     app.controller("disciplineListCtrl", disciplineListCtrl);
     app.controller("appCtrl", appCtrl);
     app.config(function($stateProvider, $urlRouterProvider){
