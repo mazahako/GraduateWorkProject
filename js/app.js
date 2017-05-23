@@ -2,6 +2,7 @@
     var app = angular.module("MyApp", ['ngMaterial', "ui.router"]);
     app.filter("disciplineFilter", disciplineFilter);
     app.controller("disciplineListCtrl", disciplineListCtrl);
+    app.controller("mapCtrl", mapCtrl);
     app.controller("appCtrl", appCtrl);
     app.config(function($stateProvider, $urlRouterProvider){
         $urlRouterProvider.otherwise("/list");
@@ -19,6 +20,8 @@
         .state('map', {
             url: "/map",
             templateUrl: "html/map.tmpl.html",
+            controllerAs: 'mapCtrl',
+            controller: 'mapCtrl'
         })
         .state('settings', {
             url: "/settings",

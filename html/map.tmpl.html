@@ -9,15 +9,26 @@
 <md-content flex>
     <md-card layout="column">
         <md-card-content>
-            <p>
-                До нас вы можете добраться:<br>
-                - с южд маршрутом 278;<br>
-                - с с.м. Университет маршрутами 2, 65;<br>
-                - с с.м. Героев труда маршрутами 247, 263, 55, 17. <br>
-                Мы распологаемся в радиокорпусе на 3 этаже.
-            </p>
-            <iframe width="100%" height="400px" frameborder="0" allowfullscreen
-                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJAQJotxynJ0ERX1pU6l0cwFM&key=AIzaSyD9jp0sz6gGRFTG5xu6kmn4dogVAGVSFr0">
+            <h4>
+                Мы распологаемся в радиокорпусе ХАИ на 3 этаже. До нас вы можете добраться по маршруту:
+            </h4>
+            <md-button ng-click="mapCtrl.switchMap(0)" class="md-primary">
+                От ЮЖД
+            </md-button>
+            <md-button ng-click="mapCtrl.switchMap(1)" class="md-primary">
+                От с.м. Университет
+            </md-button>
+            <md-button ng-click="mapCtrl.switchMap(2)" class="md-primary">
+                От с.м. Героев труда
+            </md-button>
+            <iframe width="100%" height="450" frameborder="0" style="border:0" ng-if="mapCtrl.showMap[2]"
+                    ng-src="https://www.google.com/maps/embed/v1/directions?origin=%D0%A1%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F%20%D0%BC%D0%B5%D1%82%D1%80%D0%BE%20%D0%B3%D0%B5%D1%80%D0%BE%D0%B5%D0%B2%20%D1%82%D1%80%D1%83%D0%B4%D0%B0&destination=%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%9D%D0%90%D0%A3%20%C2%AB%D0%A5%D0%90%D0%98%C2%BB&key=AIzaSyD9jp0sz6gGRFTG5xu6kmn4dogVAGVSFr0">
+            </iframe>
+            <iframe width="100%" height="450" frameborder="0" style="border:0" ng-if="mapCtrl.showMap[1]"
+                    ng-src="https://www.google.com/maps/embed/v1/directions?origin=%D0%A1%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F%20%D0%BC%D0%B5%D1%82%D1%80%D0%BE%20%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82&destination=%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%9D%D0%90%D0%A3%20%C2%AB%D0%A5%D0%90%D0%98%C2%BB&key=AIzaSyD9jp0sz6gGRFTG5xu6kmn4dogVAGVSFr0">
+            </iframe>
+            <iframe width="100%" height="450" frameborder="0" style="border:0" ng-if="mapCtrl.showMap[0]"
+                    ng-src="https://www.google.com/maps/embed/v1/directions?origin=%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F%20%D0%BC%D0%B5%D1%82%D1%80%D0%BE%20%D1%8E%D0%B6%D0%B4&destination=%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%9D%D0%90%D0%A3%20%C2%AB%D0%A5%D0%90%D0%98%C2%BB&key=AIzaSyD9jp0sz6gGRFTG5xu6kmn4dogVAGVSFr0">
             </iframe>
         </md-card-content>
     </md-card>
