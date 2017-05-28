@@ -1,6 +1,6 @@
 function disciplineListCtrl($mdDialog, $http) {
     var self = this;
-    this.disciplines = $http.post('/json/disciplines.json')
+    this.disciplines = $http.post('json/disciplines.json')
     .then(function(response) {
             self.disciplines = response.data;
     });
@@ -92,7 +92,7 @@ function disciplineListCtrl($mdDialog, $http) {
 		$mdDialog.show({
 			parent: parentEl,
 			targetEvent: $event,
-			templateUrl: '../html/disciplineDialog.tmpl.html',
+			templateUrl: 'html/disciplineDialog.tmpl.html',
 			locals: {
 				willKnow: item.willKnow,
 				willBeAble: item.willBeAble,
@@ -103,12 +103,24 @@ function disciplineListCtrl($mdDialog, $http) {
 		});
 
 		function DialogController($mdDialog, locals) {
+            this.favoriteIcon = {};
+            this.favoriteIcon.border = "node_modules/material-design-icons/action/svg/production/ic_favorite_border_48px.svg";
+            this.favoriteIcon.filled = "node_modules/material-design-icons/action/svg/production/ic_favorite_48px.svg";
+            this.favoriteIcon.current = this.favoriteIcon.border;
 			this.willKnow = locals.willKnow;
 			this.willBeAble = locals.willBeAble;
 			this.name = locals.name;
 			this.closeDialog = function() {
 				$mdDialog.hide();
 			}
+            this.likeIt = function(){
+                if(this.favoriteIcon.current == this.favoriteIcon.border){
+                    this.favoriteIcon.current = this.favoriteIcon.filled;
+                }
+                else{
+                    this.favoriteIcon.current = this.favoriteIcon.border;
+                }
+            }
 		}
 	}
 }

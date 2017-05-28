@@ -26,7 +26,10 @@
 			</md-tab>
 		</md-tabs>
 	</md-dialog-content>
-	<md-dialog-actions>
+	<md-dialog-actions layout="row" layout-align="space-between center">
+        <md-icon-button ng-click="DialogCtrl.likeIt()" style="outline:none">
+            <md-icon md-svg-src="{{ DialogCtrl.favoriteIcon.current }}"></md-icon>
+        </md-icon-button>
 		<md-button ng-click="DialogCtrl.closeDialog()" class="md-primary"> Закрыть
 		</md-button>
 	</md-dialog-actions>
