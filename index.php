@@ -1,13 +1,13 @@
 <?php
-if (!isset($_SESSION))session_start();
-if (isset($_GET['do']) && $_GET['do']=='logout') {
-    unset($_SESSION['user']);
-    session_destroy();
-}
-if (!$_SESSION['user']) {
-    header("Location: auth.php");
-    exit();
-}?>
+// if (!isset($_SESSION))session_start();
+// if (isset($_GET['do']) && $_GET['do']=='logout') {
+//     unset($_SESSION['user']);
+//     session_destroy();
+// }
+// if (!$_SESSION['user']) {
+//     header("Location: auth.php");
+//     exit();
+//}?>
 
 <!DOCTYPE html>
 <html lang="en" ng-app="MyApp" ng-controller="appCtrl as app" >
@@ -15,17 +15,17 @@ if (!$_SESSION['user']) {
 <head>
 	<meta charset="UTF-8">
 	<title>K504</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-
 </head>
 
 <body layout="row" layout-fill>
-	<md-sidenav class="md-sidenav-left" layout="column" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
+	<md-sidenav class="md-sidenav-left" layout="column" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-sm')">
 		<md-toolbar class="md-tall" layout="row">
 			<div class="md-toolbar-tools">
 				<h2 flex>Навигация</h2>
 
-				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md aria-label="More">
+				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-sm aria-label="More">
 					<md-icon md-svg-icon="node_modules/material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg"></md-icon>
 				</md-button>
 			</div>

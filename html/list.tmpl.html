@@ -1,6 +1,6 @@
 <md-toolbar md-whiteframe="2" layout="row">
     <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md>
+        <md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-sm>
             <md-icon md-svg-icon="node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"></md-icon>
         </md-button>
         <h2 flex>Перечень дисциплин</h2>
@@ -9,9 +9,9 @@
 
 <md-content flex>
     <md-card>
-        <md-card-header>
+        <md-card-header layout="column" layout-gt-xs="row">
             <md-menu>
-                <md-button class="md-raised md-primary" ng-click="discCtrl.openMenu($mdOpenMenu, $event)">
+                <md-button class="md-raised md-primary" ng-click="discCtrl.openMenu($mdOpenMenu, $event)" flex="100">
                     <span>Выбрать по курсу</span>
                     <md-icon md-menu-origin md-svg-icon="node_modules\material-design-icons\navigation\svg\production\ic_arrow_drop_down_48px.svg"></md-icon>
                 </md-button>
@@ -26,7 +26,7 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <md-menu>
+            <md-menu flex-gt-sm="30" flex="80">
                 <md-button class="md-raised md-primary" ng-click="discCtrl.openMenu($mdOpenMenu, $event)">
                     <span>Выбрать по направлению</span>
                     <md-icon md-menu-origin md-svg-icon="node_modules\material-design-icons\navigation\svg\production\ic_arrow_drop_down_48px.svg"></md-icon>
@@ -40,7 +40,7 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <md-button class="md-raised md-primary" ng-click="discCtrl.showAllDisciplines()">
+            <md-button class="md-raised md-primary" ng-click="discCtrl.showAllDisciplines()" ng-if="$mdMedia('gt-sm')">
                 <span>Показать все</span>
             </md-button>
         </md-card-header>

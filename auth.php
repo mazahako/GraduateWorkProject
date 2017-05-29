@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <title>K504</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 </head>
 
 <body layout="row" flex layout-fill layout-align="center center">
 <md-content flex="70" flex-gt-xs="40" flex-gt-sm="25" flex-gt-md="20">
-    <md-card>
+    <md-card md-whiteframe="8">
         <img ng-src="img/k504.jpg" class="md-card-image">
         <md-card-title>
             <md-card-title-text layout-align="center center">
@@ -36,6 +36,7 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
+<script src="node_modules/particles.js/particles.js"></script>
 <script src="js/authApp.js"></script>
 
 </html>
