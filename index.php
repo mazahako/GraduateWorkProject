@@ -1,3 +1,14 @@
+<?php
+if (!isset($_SESSION))session_start();
+if (isset($_GET['do']) && $_GET['do']=='logout') {
+    unset($_SESSION['user']);
+    session_destroy();
+}
+if (!$_SESSION['user']) {
+    header("Location: auth.php");
+    exit();
+}?>
+
 <!DOCTYPE html>
 <html lang="en" ng-app="MyApp" ng-controller="appCtrl as app" >
 
@@ -13,6 +24,7 @@
 		<md-toolbar class="md-tall" layout="row">
 			<div class="md-toolbar-tools">
 				<h2 flex>Навигация</h2>
+
 				<md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-md aria-label="More">
 					<md-icon md-svg-icon="node_modules/material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg"></md-icon>
 				</md-button>
@@ -40,10 +52,10 @@
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_settings_48px.svg"></md-icon>
 					<p>Настройки</p>
 				</md-list-item> -->
-                <md-list-item ui-sref="">
-					<md-icon md-svg-icon="node_modules/material-design-icons/action/svg/production/ic_exit_to_app_48px.svg"></md-icon>
-					<p>Выйти</p>
-				</md-list-item>
+                <md-list-item ng-href="auth.php?do=logout">
+                    <md-icon md-svg-icon="node_modules/material-design-icons/action/svg/production/ic_exit_to_app_48px.svg"></md-icon>
+                    <p>Выход</p>
+                </md-list-item>
 			</md-list>
 		</md-content>
 	</md-sidenav>
