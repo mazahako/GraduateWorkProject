@@ -1,0 +1,38 @@
+CREATE SCHEMA myschema;
+CREATE TYPE social_type AS ENUM ('vk', 'ok', 'fb', 'google');
+CREATE TABLE myschema.users(
+  id_user SERIAL PRIMARY KEY NOT NULL,
+  id_place INT REFERENCES myschema.places (id_place),
+  social_type social_type,
+  social_id TEXT NOT NULL UNIQUE,
+  firstname VARCHAR(25) NOT NULL,
+  surname VARCHAR(25) NOT NULL,
+  email VARCHAR(35),
+  telefon json,
+  social json
+);
+CREATE TABLE myschema.user_activity(
+  id_record SERIAL PRIMARY KEY NOT NULL,
+  id_user INT REFERENCES myschema.users (id_user),
+  start_activity TIMESTAMP,
+  finish_activity TIMESTAMP,
+  result TEXT
+);
+CREATE TABLE myschema.places(
+  id_place SERIAL PRIMARY KEY NOT NULL,
+  region VARCHAR(30),
+  locality VARCHAR(30),
+  school VARCHAR(60),
+  date TIMESTAMP,
+  comment VARCHAR(150),
+  contact_person VARCHAR(30)
+);
+DELETE FROM myschema.users;
+DELETE FROM myschema.user_activity;
+DROP TABLE myschema.users;
+DROP TABLE myschema.user_activity;
+SELECT * FROM myschema.users WHERE social_id='571867241793';
+INSERT INTO myschema.user_activity(id_user, start_activity) VALUES (2, current_timestamp);
+INSERT INTO myschema.users(social_id, firstname, surname, email) VALUES (1234, 'kim', 'fhrudg', 'hgrge@mail.ru');
+INSERT INTO myschema.places(region, locality, school, date, comment, contact_person) VALUES ('Kharkivska oblast', 'Kharkiv', '36', current_timestamp, '9 clas', 'Admin') RETURNING id_place;
+SELECT id_user FROM myschema.users WHERE social_id='571867241793';
