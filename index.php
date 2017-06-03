@@ -44,14 +44,14 @@
 					<md-icon md-svg-icon="node_modules/material-design-icons/maps/svg/production/ic_place_48px.svg"></md-icon>
 					<p>Как нас найти</p>
 				</md-list-item>
-				<md-list-item ui-sref="profile">
+				<!-- <md-list-item ui-sref="profile">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_account_circle_48px.svg"></md-icon>
 					<p>Профиль</p>
 				</md-list-item>
 				<md-list-item ui-sref="settings">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_settings_48px.svg"></md-icon>
 					<p>Настройки</p>
-				</md-list-item>
+				</md-list-item> -->
                 <md-list-item ng-href="auth.php?do=logout">
                     <md-icon md-svg-icon="node_modules/material-design-icons/action/svg/production/ic_exit_to_app_48px.svg"></md-icon>
                     <p>Выход</p>
