@@ -1,4 +1,4 @@
-function disciplineListCtrl($mdDialog, $http) {
+function disciplineListCtrl($mdDialog, $http, $scope) {
     var self = this;
     this.disciplines = $http.post('json/disciplines.json')
     .then(function(response) {
@@ -16,6 +16,8 @@ function disciplineListCtrl($mdDialog, $http) {
     };
 
     this.sortParams = {
+        time: new Date(),
+        deltaTime: 0,
         course: [
             {
                 num: "1",
@@ -81,6 +83,45 @@ function disciplineListCtrl($mdDialog, $http) {
             }
         ]
     }
+
+    $scope.$watch(
+        function() {
+            return self.sortParams.type;
+        },
+        function(newValue, oldValue){
+            var date = new Date();
+            var params = {};
+            params.course = self.sortParams.course;
+            params.type = oldValue;
+            self.sortParams.deltaTime = (date - self.sortParams.time)/1000;
+            params.deltaTime = self.sortParams.deltaTime;
+            self.sortParams.time = date;
+
+            if(self.sortParams.deltaTime > 5){
+                $http.post('user_activity.php', params);
+                console.log(params);
+            }
+        }, true);
+
+    $scope.$watch(
+        function() {
+            return self.sortParams.course;
+        },
+        function(newValue, oldValue){
+            var date = new Date();
+            var params = {};
+            params.type = self.sortParams.type;
+            params.course = oldValue;
+
+            self.sortParams.deltaTime = (date - self.sortParams.time)/1000;
+            params.deltaTime = self.sortParams.deltaTime;
+            self.sortParams.time = date;
+
+            if(self.sortParams.deltaTime > 5){
+                $http.post('user_activity.php', params);
+                console.log(params);
+            }
+        }, true);
 
     this.openMenu = function($mdOpenMenu, ev) {
         $mdOpenMenu(ev);
