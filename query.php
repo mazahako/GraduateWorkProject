@@ -13,9 +13,9 @@ class query
         pg_execute($this->pg_con, "new_user", array($social_id, $first_name, $last_name, $email, $telefon, $user_json, $social_type, $id_place));
     }
 
-    function add_record ($id_user) {
-        pg_prepare($this->pg_con, "new_activity", 'INSERT INTO myschema.user_activity(id_user, start_activity) VALUES ($1, now())');
-        pg_execute($this->pg_con, "new_activity", array($id_user));
+    function add_record ($id_user, $result = NULL) {
+        pg_prepare($this->pg_con, "new_activity", 'INSERT INTO myschema.user_activity(id_user, start_activity, result) VALUES ($1, now(), $2)');
+        pg_execute($this->pg_con, "new_activity", array($id_user, $result));
     }
 
 

@@ -43,10 +43,12 @@ if (isset($_GET['code'])) {
                 $query->add_user($userInfo['uid'], $userInfo['first_name'], $userInfo['last_name'], $json_vk);
             }
                 $result = pg_query($pg_con, "SELECT id_user FROM myschema.users WHERE social_id='$user_social_id'");
-                $query->add_record(pg_fetch_row($result)[0]);
+            $id_user = pg_fetch_row($result)[0];
+            $query->add_record($id_user);
         }
         if ($result) {
             $_SESSION['user'] = $userInfo;
+            $SESSION['id_user'] = $id_user;
             header('Location: ../index.php');
         }
     }

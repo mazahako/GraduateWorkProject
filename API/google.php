@@ -55,7 +55,8 @@ if (isset($_GET['code'])) {
                 $query->add_user($userInfo['id'], $userInfo['given_name'], $userInfo['family_name'], $json_google, $userInfo['email'], 'google');
             }
             $result = pg_query($pg_con, "SELECT id_user FROM myschema.users WHERE social_id='$user_social_id'");
-            $query->add_record(pg_fetch_row($result)[0]);
+            $id_user = pg_fetch_row($result)[0];
+            $query->add_record($id_user);
 
             foreach ($userInfo as $key=>$value) {
                 echo $key."->".$value."<br>";
@@ -65,6 +66,7 @@ if (isset($_GET['code'])) {
     }
     if ($result) {
         $_SESSION['user'] = $userInfo;
+        $_SESSION['id_user'] = $id_user;
         header('Location: ../index.php');
     }
 }
