@@ -12,9 +12,8 @@ spl_autoload_register('autoload');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $json = file_get_contents("php://input");
-    //$json = '{"page": 1}';
-    $page = json_decode($json, true);
-    $page = $page["page"];
+
+    $page = $json;
     $max = $page*20;
     $min = $max-20;
     $db = database::get_instance();
