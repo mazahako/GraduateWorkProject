@@ -2,11 +2,11 @@ function userInfoCtrl($mdDialog, $http, $scope) {
     var self = this;
 
     self.currentPage = 1;
-    self.numberOfUsers = 2;
+
     $http.post('php/count_user.php')
         .then(function(response) {
             self.numberOfUsers = response.data.count;
-    });
+        });
     self.users = $http.post('php/users.php', self.currentPage).
         then(function(responce){
             self.users = responce.data;
@@ -40,7 +40,7 @@ function userInfoCtrl($mdDialog, $http, $scope) {
 			controller: dialogController
 		});
 
-		function dialogController($mdDialog, locals) {
+		function dialogController($mdDialog, locals, $http) {
             var self = this;
 			self.userId = locals.userId;
             self.userName = locals.userName;
