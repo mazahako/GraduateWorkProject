@@ -1,6 +1,6 @@
 function disciplineListCtrl($mdDialog, $http, $scope) {
     var self = this;
-    this.disciplines = $http.post('json/disciplines.json')
+    $http.post('json/disciplines.json')
     .then(function(response) {
             self.disciplines = response.data;
     });

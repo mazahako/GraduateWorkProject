@@ -2,6 +2,7 @@
 	var app = angular.module("MyApp", ['ngMaterial', "ui.router"]);
 	app.filter("disciplineFilter", disciplineFilter);
 	app.controller("disciplineListCtrl", disciplineListCtrl);
+    app.controller("userInfoCtrl", userInfoCtrl);
 	app.controller("mapCtrl", mapCtrl);
 	app.controller("appCtrl", appCtrl);
 	app.config(function($mdThemingProvider) {
@@ -32,6 +33,12 @@
 			.state('settings', {
 				url: "/settings",
 				templateUrl: "html/settings.tmpl.html",
+			})
+            .state('userInfo', {
+				url: "/userInfo",
+				templateUrl: "html/userInfo.tmpl.html",
+                controllerAs: 'userInfoCtrl',
+				controller: 'userInfoCtrl'
 			})
 			.state('profile', {
 				url: "/profile",

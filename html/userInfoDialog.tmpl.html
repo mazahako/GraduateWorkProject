@@ -1,0 +1,24 @@
+<md-dialog aria-label="List dialog">
+	<md-dialog-content>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2 md-truncate flex class="md-ellipsis">{{ dialogCtrl.userName + " " + dialogCtrl.userSurname }}</h2>
+			</div>
+		</md-toolbar>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Инфомация">
+				<md-content class="md-padding">
+					<p>Что-то напишем=)</p>
+				</md-content>
+			</md-tab>
+            <md-tab label="Статистика">
+				<md-content class="md-padding">
+					{{dialogCtrl.userInfo[1].type}}
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-dialog-content>
+	<md-dialog-actions layout="row" layout-align="space-between center">
+		<md-button ng-click="dialogCtrl.closeDialog()" class="md-primary">Закрыть</md-button>
+	</md-dialog-actions>
+</md-dialog>

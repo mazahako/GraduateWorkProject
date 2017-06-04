@@ -44,6 +44,10 @@
 					<md-icon md-svg-icon="node_modules/material-design-icons/maps/svg/production/ic_place_48px.svg"></md-icon>
 					<p>Как нас найти</p>
 				</md-list-item>
+                <md-list-item ui-sref="userInfo">
+					<md-icon md-svg-icon="node_modules/material-design-icons/social/svg/production/ic_people_48px.svg"></md-icon>
+					<p>Статистика</p>
+				</md-list-item>
 				<!-- <md-list-item ui-sref="profile">
 					<md-icon md-svg-icon="../node_modules/material-design-icons/action/svg/production/ic_account_circle_48px.svg"></md-icon>
 					<p>Профиль</p>
@@ -75,6 +79,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
 <script src="js/disciplineListCtrl.js"></script>
+<script src="js/userInfoCtrl.js"></script>
 <script src="js/disciplineFilter.js"></script>
 <script src="js/mapCtrl.js"></script>
 <script src="js/appCtrl.js"></script>
