@@ -1,4 +1,4 @@
-<md-dialog aria-label="List dialog" flex="70" flex-gt-sm="40" flex-gt-md="40">
+<md-dialog aria-label="List dialog" flex="70" flex-gt-sm="40">
 	<md-dialog-content>
 		<md-toolbar>
 			<div class="md-toolbar-tools">
@@ -6,11 +6,6 @@
 			</div>
 		</md-toolbar>
 		<md-tabs md-dynamic-height md-border-bottom>
-			<md-tab label="Инфомация">
-				<md-content class="md-padding">
-					<p>Что-то напишем=)</p>
-				</md-content>
-			</md-tab>
             <md-tab label="По курсам">
 				<md-content class="md-padding">
                     <canvas id="doughnut" class="chart chart-doughnut"
@@ -27,13 +22,11 @@
                     </canvas>
 				</md-content>
 			</md-tab>
-            <md-tab label="По дате">
+            <md-tab label="По дате" hide>
 				<md-content class="md-padding">
                     <canvas id="line" class="chart chart-line"
                             chart-data="dialogCtrl.statistic.date.count"
-                            chart-labels="dialogCtrl.statistic.date.date"
-                            width="200px"
-                            height="200px">
+                            chart-labels="dialogCtrl.statistic.date.date">
                     </canvas
 				</md-content>
 			</md-tab>

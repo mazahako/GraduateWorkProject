@@ -1,6 +1,7 @@
 function disciplineFilter() {
     return function (items, params) {
         var result = [];
+        if(items === undefined) return [];
         for (var i = 0; i < items.length; i++) {
             for(var c = 0; c < params.course.length; c++){
                 if((params.course[c].state == true)&&(items[i].course.indexOf(params.course[c].num) >= 0)){

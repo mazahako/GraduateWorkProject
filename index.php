@@ -1,7 +1,7 @@
 <?php
 //  if (!isset($_SESSION))session_start();
 //  if (isset($_GET['do']) && $_GET['do']=='logout') {
-//      unset($_SESSION['user']);
+//  unset($_SESSION['user']);
 //      session_destroy();
 //  }
 //  if (!$_SESSION['user']) {

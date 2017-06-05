@@ -3,7 +3,7 @@
         <md-button class="md-icon-button" ng-click="app.toogleLeftSidenav()" hide-gt-sm>
             <md-icon md-svg-icon="node_modules/material-design-icons/navigation/svg/production/ic_menu_48px.svg"></md-icon>
         </md-button>
-        <h2 flex>Информация о пользователях</h2>
+        <h2 flex>Статистика</h2>
     </div>
 </md-toolbar>
 
@@ -22,7 +22,7 @@
         </md-card-header>
         <md-card-content>
             <md-list>
-                <md-list-item class="md-1-line" ng-repeat="user in userInfoCtrl.users"
+                <md-list-item class="md-2-line" ng-repeat="user in userInfoCtrl.users"
                             ng-click="userInfoCtrl.showAdditionInformation($event, user)">
                     <div class="md-list-item-text">
                         <h3>{{user[1] + " " + user[2]}}</h3>
