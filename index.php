@@ -1,13 +1,13 @@
 <?php
-//  if (!isset($_SESSION))session_start();
-//  if (isset($_GET['do']) && $_GET['do']=='logout') {
-//  unset($_SESSION['user']);
-//      session_destroy();
-//  }
-//  if (!$_SESSION['user']) {
-//      header("Location: auth.php");
-//      exit();
-// }?>
+if (!isset($_SESSION))session_start();
+if (isset($_GET['do']) && $_GET['do']=='logout') {
+    unset($_SESSION['user']);
+    session_destroy();
+}
+if (!$_SESSION['user']) {
+    header("Location: auth.php");
+    exit();
+}?>
 
 <!DOCTYPE html>
 <html lang="en" ng-app="MyApp" ng-controller="appCtrl as app" >
