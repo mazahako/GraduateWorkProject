@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module("MyApp", ['ngMaterial', "ui.router"]);
+	var app = angular.module("MyApp", ['ngMaterial', 'ui.router', 'chart.js']);
 	app.filter("disciplineFilter", disciplineFilter);
 	app.controller("disciplineListCtrl", disciplineListCtrl);
     app.controller("userInfoCtrl", userInfoCtrl);
@@ -12,7 +12,7 @@
 			.primaryPalette('teal')
 	});
 	app.config(function($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise("/list");
+		$urlRouterProvider.otherwise("/info");
 		$stateProvider
 			.state('list', {
 				url: "/list",

@@ -1,32 +1,8 @@
 CREATE SCHEMA myschema;
-CREATE TYPE social_type AS ENUM ('vk', 'ok', 'fb', 'google');
-CREATE TABLE myschema.users(
-  id_user SERIAL PRIMARY KEY NOT NULL,
-  id_place INT REFERENCES myschema.places (id_place),
-  social_type social_type,
-  social_id TEXT NOT NULL UNIQUE,
-  firstname VARCHAR(25) NOT NULL,
-  surname VARCHAR(25) NOT NULL,
-  email VARCHAR(35),
-  telefon json,
-  social json
-);
-CREATE TABLE myschema.user_activity(
-  id_record SERIAL PRIMARY KEY NOT NULL,
-  id_user INT REFERENCES myschema.users (id_user),
-  start_activity TIMESTAMP,
-  finish_activity TIMESTAMP,
-  result TEXT
-);
-CREATE TABLE myschema.places(
-  id_place SERIAL PRIMARY KEY NOT NULL,
-  region VARCHAR(30),
-  locality VARCHAR(30),
-  school VARCHAR(60),
-  date TIMESTAMP,
-  comment VARCHAR(150),
-  contact_person VARCHAR(30)
-);
+CREATE TYPE social_type AS ENUM('vk','ok','fb','google');
+CREATE TABLE myschema.users(id_user SERIAL PRIMARY KEY NOT NULL,id_place INT REFERENCES myschema.places (id_place),social_type social_type,social_id TEXT NOT NULL UNIQUE,firstname VARCHAR(25) NOT NULL,surname VARCHAR(25) NOT NULL,email VARCHAR(35),telefon json,social json);
+CREATE TABLE myschema.user_activity(id_record SERIAL PRIMARY KEY NOT NULL,id_user INT REFERENCES myschema.users (id_user),start_activity TIMESTAMP,finish_activity TIMESTAMP,result TEXT);
+CREATE TABLE myschema.places(id_place SERIAL PRIMARY KEY NOT NULL,region VARCHAR(30),locality VARCHAR(30),school VARCHAR(60),date TIMESTAMP,comment VARCHAR(150),contact_person VARCHAR(30));
 DELETE FROM myschema.users;
 DELETE FROM myschema.user_activity;
 DROP TABLE myschema.users;

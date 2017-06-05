@@ -78,6 +78,9 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
 <script src="js/disciplineListCtrl.js"></script>
 <script src="js/userInfoCtrl.js"></script>
 <script src="js/disciplineFilter.js"></script>
