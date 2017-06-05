@@ -1,6 +1,9 @@
 node_modules/**/*
 graduatework.local/**/*
 .git/**/*
+.idea/**/*
+.android/**/*
+.php/log.txt
 .tern-project
 npm-debug.log
 README.md

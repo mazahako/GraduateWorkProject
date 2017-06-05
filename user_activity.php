@@ -14,6 +14,8 @@ if (!$_SESSION['id_user']) {
 require_once 'database.php';
 require_once 'query.php';
 
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = file_get_contents("php://input");
     $id_user = $_SESSION['id_user'];
