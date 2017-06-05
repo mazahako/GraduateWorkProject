@@ -12,14 +12,6 @@ spl_autoload_register('autoload');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $json = file_get_contents("php://input");
-    //$json = '{"id_user": 1}';
-    //$id_user = json_decode($json, true);
-    //$id_user = $id_user["id_user"];
-    //echo $json;
-    $file=fopen("log.txt", "a");
-    fwrite($file, $json);
-    fclose($file);
-
     $id_user = $json;
     $db = database::get_instance();
     $pg_con = $db->get_connection();

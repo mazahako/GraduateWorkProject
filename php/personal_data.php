@@ -12,9 +12,6 @@ spl_autoload_register('autoload');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_user = file_get_contents("php://input");
-    $file=fopen("log.txt", "a");
-    fwrite($file, $id_user);
-    fclose($file);
     $db = database::get_instance();
     $pg_con = $db->get_connection();
     pg_prepare($pg_con, "personal_data", 'SELECT * FROM myschema.users WHERE id_user = $1;');
