@@ -1,4 +1,4 @@
-<md-dialog aria-label="List dialog">
+<md-dialog aria-label="List dialog" flex="70" flex-gt-sm="40" flex-gt-md="40">
 	<md-dialog-content>
 		<md-toolbar>
 			<div class="md-toolbar-tools">
@@ -14,8 +14,6 @@
             <md-tab label="По курсам">
 				<md-content class="md-padding">
                     <canvas id="doughnut" class="chart chart-doughnut"
-                            width="200px"
-                            height="200px"
                             chart-data="dialogCtrl.statistic.course.count"
                             chart-labels="dialogCtrl.statistic.course.num">
                     </canvas>
@@ -24,8 +22,6 @@
             <md-tab label="По направлению">
 				<md-content class="md-padding">
                     <canvas id="pie" class="chart chart-pie"
-                            width="200px"
-                            height="200px"
                             chart-data="dialogCtrl.statistic.type.count"
                             chart-labels="dialogCtrl.statistic.type.names">
                     </canvas>
