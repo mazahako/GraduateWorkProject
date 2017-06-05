@@ -12,9 +12,6 @@ spl_autoload_register('autoload');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $json = file_get_contents("php://input");
-    $file=fopen("log.txt", "a");
-    fwrite($file, $json);
-    fclose($file);
     $page = $json;
     $max = $page*20;
     $min = $max-20;
