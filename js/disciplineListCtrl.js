@@ -98,7 +98,7 @@ function disciplineListCtrl($mdDialog, $http, $scope) {
             self.sortParams.time = date;
 
             if(self.sortParams.deltaTime > 5){
-                $http.post('user_activity.php', params);
+                $http.post('php/user_activity.php', params);
                 console.log(params);
             }
         }, true);
