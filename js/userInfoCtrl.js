@@ -7,13 +7,29 @@ function userInfoCtrl($mdDialog, $http, $scope) {
         .then(function(response) {
             self.numberOfUsers = response.data.count;
         });
-    self.users = $http.post('php/users.php', self.currentPage).
-        then(function(responce){
-            self.users = responce.data;
-            for(var i = 0; i < self.users.length; i++){
-                self.users[i] = self.users[i].row.slice(1, self.users[i].row.length-1).split(',');
-            }
-        });
+
+    self.nextPage = function(){
+        if(self.currentPage*20 < self.numberOfUsers) self.currentPage++;
+        self.getUsers();
+        return;
+    }
+
+    self.prevPage = function(){
+        if(self.currentPage > 1) self.currentPage--;
+        self.getUsers();
+        return;
+    }
+
+    self.getUsers = function(){
+        $http.post('php/users.php', self.currentPage).
+            then(function(responce){
+                self.users = responce.data;
+                for(var i = 0; i < self.users.length; i++){
+                    self.users[i] = self.users[i].row.slice(1, self.users[i].row.length-1).split(',');
+                }
+            });
+    }
+    self.getUsers();
 
     self.openMenu = function($mdOpenMenu, ev) {
         $mdOpenMenu(ev);
