@@ -2,14 +2,19 @@ function userInfoCtrl($mdDialog, $http, $scope) {
     var self = this;
 
     self.currentPage = 1;
+    self.numberOfUsers;
 
-    $http.post('php/count_user.php')
+    self.numberOfUsers = $http.post('php/count_user.php')
         .then(function(response) {
             self.numberOfUsers = response.data.count;
         });
 
     self.nextPage = function(){
-        if(self.currentPage*20 < self.numberOfUsers) self.currentPage++;
+        console.log(self.currentPage);
+        if(self.currentPage*20 < self.numberOfUsers) {
+            self.currentPage++;
+            console.log(self.currentPage);
+        }
         self.getUsers();
         return;
     }

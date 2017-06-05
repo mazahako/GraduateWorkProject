@@ -10,13 +10,13 @@
 <md-content flex>
     <md-card>
         <md-card-header layout="row" layout-align="center center">
-            <md-button class="md-icon-button" ng-disabled="userInfoCtrl.currentPage == 1" ng-click="userInfoCtrl.nextPage()">
+            <md-button class="md-icon-button" ng-disabled="userInfoCtrl.currentPage == 1" ng-click="userInfoCtrl.prevPage()">
                 <md-icon md-svg-icon="node_modules/material-design-icons/image/svg/production/ic_navigate_before_48px.svg"></md-icon>
             </md-button>
             <md-card-title-text>
                 <span class="md-headline">Страница {{userInfoCtrl.currentPage}}</span>
             </md-card-title-text>
-            <md-button class="md-icon-button" ng-disabled="userInfoCtrl.currentPage*20 >= userInfoCtrl.numberOfUsers" ng-click="userInfoCtrl.prevPage()">
+            <md-button class="md-icon-button" ng-disabled="userInfoCtrl.currentPage*20 >= userInfoCtrl.numberOfUsers" ng-click="userInfoCtrl.nextPage()">
                 <md-icon md-svg-icon="node_modules/material-design-icons/image/svg/production/ic_navigate_next_48px.svg"></md-icon>
             </md-button>
         </md-card-header>
