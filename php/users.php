@@ -6,7 +6,7 @@
  * Time: 15:21
  */
 function autoload($class) {
-    require_once("../".strtolower($class).".php");
+    require_once("../db/".strtolower($class).".php");
 }
 spl_autoload_register('autoload');
 

@@ -11,8 +11,8 @@ if (!$_SESSION['id_user']) {
     exit();
 }
 
-require_once 'database.php';
-require_once 'query.php';
+require_once 'db/database.php';
+require_once 'db/query.php';
 
 
 

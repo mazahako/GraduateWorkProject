@@ -2,8 +2,11 @@ node_modules/**/*
 graduatework.local/**/*
 .git/**/*
 .idea/**/*
+<<<<<<< HEAD
 .android/**/*
 .php/log.txt
+=======
+>>>>>>> 64d8bf492e9b6c68447c3bf235256e40c38f3f01
 .tern-project
 npm-debug.log
 README.md

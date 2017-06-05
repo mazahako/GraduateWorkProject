@@ -2,7 +2,7 @@
 
 if (!isset($_SESSION))session_start();
 function autoload($class) {
-    require_once('../'.strtolower($class).".php");
+    require_once('../db/'.strtolower($class).".php");
 }
 spl_autoload_register('autoload');
 

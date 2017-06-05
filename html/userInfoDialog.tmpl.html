@@ -11,14 +11,39 @@
 					<p>Что-то напишем=)</p>
 				</md-content>
 			</md-tab>
-            <md-tab label="Статистика">
+            <md-tab label="По курсам">
 				<md-content class="md-padding">
-					{{dialogCtrl.userInfo[1].type}}
+                    <canvas id="doughnut" class="chart chart-doughnut"
+                            width="200px"
+                            height="200px"
+                            chart-data="dialogCtrl.statistic.course.count"
+                            chart-labels="dialogCtrl.statistic.course.num">
+                    </canvas>
+				</md-content>
+			</md-tab>
+            <md-tab label="По направлению">
+				<md-content class="md-padding">
+                    <canvas id="pie" class="chart chart-pie"
+                            width="200px"
+                            height="200px"
+                            chart-data="dialogCtrl.statistic.type.count"
+                            chart-labels="dialogCtrl.statistic.type.names">
+                    </canvas>
+				</md-content>
+			</md-tab>
+            <md-tab label="По дате">
+				<md-content class="md-padding">
+                    <canvas id="line" class="chart chart-line"
+                            chart-data="dialogCtrl.statistic.date.count"
+                            chart-labels="dialogCtrl.statistic.date.date"
+                            width="200px"
+                            height="200px">
+                    </canvas
 				</md-content>
 			</md-tab>
 		</md-tabs>
 	</md-dialog-content>
-	<md-dialog-actions layout="row" layout-align="space-between center">
+	<md-dialog-actions layout="row" layout-align="space-between center" layout-align="center center">
 		<md-button ng-click="dialogCtrl.closeDialog()" class="md-primary">Закрыть</md-button>
 	</md-dialog-actions>
 </md-dialog>
